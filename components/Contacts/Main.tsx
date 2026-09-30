@@ -7,31 +7,31 @@ import OfficeMap from "./Map"
 // Карточки контактов. Цвет полоски задаётся классом из main.module.css
 const cards = [
     {
-        title: "Telegram-бот",
-        text: "Обмен USDT в пару кликов",
-        label: "@GROZTEX_bot",
-        href: "https://t.me/GROZTEX_bot",
+        title: "Telegram-канал",
+        text: "Новости и актуальные курсы",
+        label: "@cryptoman_armenia",
+        href: "https://t.me/cryptoman_armenia",
         line: classes.line__neon,
     },
     {
         title: "Поддержка",
         text: "Ответим на любой вопрос",
-        label: "@GROZTEX_Support",
-        href: "https://t.me/GROZTEX",
+        label: "@Cryptoman_supports",
+        href: "https://t.me/Cryptoman_supports",
         line: classes.line__neon__two,
     },
     {
-        title: "WhatsApp",
-        text: "Наша группа с новостями",
-        label: "Группа в WhatsApp",
-        href: "https://chat.whatsapp.com/I0PLZZCBFaG2ytel0YtwMf",
+        title: "Телефон",
+        text: "Звоните в рабочее время",
+        label: "+374 11 755 777",
+        href: "tel:+37411755777",
         line: classes.line__neon__three,
     },
     {
-        title: "Почта",
-        text: "Для деловых запросов",
-        label: "groztex@yandex.ru",
-        href: "mailto:groztex@yandex.ru?subject=Запрос%20с%20сайта&body=Здравствуйте",
+        title: "Телефон",
+        text: "Второй рабочий номер",
+        label: "+374 41 755 777",
+        href: "tel:+37441755777",
         line: classes.line__neon__four,
     },
 ]
@@ -87,7 +87,7 @@ export default function Main() {
                     <li><span>Комиссия</span>0% на обмен USDT</li>
                 </ul>
                 <div className={classes.btn__exchange}>
-                    <Link className={`${classes.link} ${classes.btn__for__exchange__two}`} href="https://t.me/GROZTEX_bot">Обменять</Link>
+                    <Link className={`${classes.link} ${classes.btn__for__exchange__two}`} href="https://t.me/Cryptoman_supports">Обменять</Link>
                 </div>
             </div>
             <div className={classes.block__map} data-reveal="zoom" style={{ "--delay": "120ms" } as React.CSSProperties}>

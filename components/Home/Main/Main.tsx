@@ -35,7 +35,7 @@ export default function Main() {
         <div className={classes.block__btn} data-reveal="zoom" style={d(200)}>
           <Link
             className={`${classes.link} ${classes.btn__for__exchange__one}`}
-            href="https://t.me/GROZTEX_bot"
+            href="https://t.me/Cryptoman_supports"
           >
             Купить / Продать USDT
           </Link>
@@ -115,7 +115,7 @@ export default function Main() {
         </article>
         <article className={classes.container_info_bot_and_news}>
           <article className={classes.block__info__text} data-reveal="zoom">
-            <h2 className={classes.zagolovok__groztex}><Logo /></h2>
+            <h2 className={classes.zagolovok__brand}><Logo /></h2>
             <div>
               <p className={classes.text__block__info}>
                 Ваш выбор для безопасного и выгодного обмена криптовалюты. Мы
@@ -125,7 +125,7 @@ export default function Main() {
             <div className={classes.block__btn}>
               <Link
                 className={`${classes.link} ${classes.btn__for__exchange__two}`}
-                href="https://t.me/GROZTEX_bot"
+                href="https://t.me/Cryptoman_supports"
               >
                 Обменять
               </Link>
@@ -133,7 +133,7 @@ export default function Main() {
           </article>
           {/* <div className={classes.line__block}></div> линия между блоков 
           <article className={classes.block__info__text__news}>
-            <h2 className={classes.zagolovok__groztex}>НОВОСТИ</h2>
+            <h2 className={classes.zagolovok__brand}>НОВОСТИ</h2>
             <div>
               <p className={`${classes.text__block__info} ${classes.text__block__info__news}`}>
                 Официальный телеграм канал обменного офиса CRYPTOMAN — обмен без
@@ -143,7 +143,7 @@ export default function Main() {
             <div className={classes.block__btn}>
               <Link
                 className={`${classes.link} ${classes.btn__for__exchange__two}`}
-                href="https://t.me/groztex_news">
+                href="https://t.me/cryptoman_armenia">
                 Подписаться
               </Link>
             </div>

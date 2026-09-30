@@ -15,11 +15,10 @@ const navLinks = [
 
 // Контакты внизу меню
 const contacts = [
-  { href: "https://t.me/GROZTEX_bot", label: "@GROZTEX_bot", note: "Бот для обмена" },
-  { href: "https://t.me/groztex_news", label: "Новостной канал", note: "Telegram" },
-  { href: "https://chat.whatsapp.com/I0PLZZCBFaG2ytel0YtwMf", label: "Группа в WhatsApp", note: "Чат" },
-  { href: "https://t.me/GROZTEX", label: "@GROZTEX_Support", note: "Поддержка" },
-  { href: "mailto:groztex@yandex.ru?subject=Запрос%20с%20сайта&body=Здравствуйте", label: "groztex@yandex.ru", note: "Почта" },
+  { href: "https://t.me/cryptoman_armenia", label: "Новостной канал", note: "Telegram" },
+  { href: "https://t.me/Cryptoman_supports", label: "@Cryptoman_supports", note: "Поддержка" },
+  { href: "tel:+37411755777", label: "+374 11 755 777", note: "Телефон" },
+  { href: "tel:+37441755777", label: "+374 41 755 777", note: "Телефон" },
 ];
 
 export default function MenuList({active, setActive}:{active:boolean; setActive:(v:boolean)=>void}) {
@@ -68,8 +67,8 @@ export default function MenuList({active, setActive}:{active:boolean; setActive:
         </ul>
 
         <div className={classes.block__btns} style={delay()}>
-          <Link onClick={close} className={`${classes.link} ${classes.btn} ${classes.btn__for__exchange}`} href="https://t.me/GROZTEX_bot">Обменять</Link>
-          <Link onClick={close} className={`${classes.link} ${classes.btn} ${classes.btn__for__news}`} href="https://t.me/groztex_news">Подписаться</Link>
+          <Link onClick={close} className={`${classes.link} ${classes.btn} ${classes.btn__for__exchange}`} href="https://t.me/Cryptoman_supports">Обменять</Link>
+          <Link onClick={close} className={`${classes.link} ${classes.btn} ${classes.btn__for__news}`} href="https://t.me/cryptoman_armenia">Подписаться</Link>
         </div>
 
         <article className={classes.block__info__three}>

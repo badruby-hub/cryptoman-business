@@ -55,7 +55,7 @@ export default function Header() {
             <li className={classes.li}><Link className={`${classes.link} ${classes.nav__link} ${isActive("/information")}`} href="/information">Информация</Link></li>
             <li className={classes.li}><Link className={`${classes.link} ${classes.nav__link} ${isActive("/contacts")}`} href="/contacts">Контакты</Link></li>
         </ul>
-        <div className={classes.block__btn}><Link className={`${classes.link} ${classes.btn__for__exchange}`} href="https://t.me/GROZTEX_bot">Обменять</Link></div>
+        <div className={classes.block__btn}><Link className={`${classes.link} ${classes.btn__for__exchange}`} href="https://t.me/Cryptoman_supports">Обменять</Link></div>
           <BurgerMenu active={active} setActive={setActive}/>
           <MenuList active={active} setActive={setActive}/>
       </nav>

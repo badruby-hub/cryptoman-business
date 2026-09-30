@@ -11,7 +11,7 @@ export default function Footer() {
                 Ваш надёжный партнёр для финансовых операций,
                 предлагает быстрый безопасный обмен криптовалюты без комиссии.
             </p>
-            <div className={classes.block__btn}><Link className={`${classes.link__btn} ${classes.btn__for__exchange__two}`} href="https://t.me/GROZTEX_bot">Обменять USDT</Link></div>
+            <div className={classes.block__btn}><Link className={`${classes.link__btn} ${classes.btn__for__exchange__two}`} href="https://t.me/Cryptoman_supports">Обменять USDT</Link></div>
            </article>
            <article className={classes.block__info__two}>
             <h3 className={classes.title}>Информация</h3>
@@ -21,11 +21,10 @@ export default function Footer() {
            </article>
              <article className={classes.block__info__three}>
             <h3 className={classes.title}>Контакты</h3>
-            <p className={`${classes.btn} ${classes.chat__news}`}><Link className={`${classes.link} ${classes.btn__groztex__news}`} href="https://t.me/groztex_news_groz">Новостной канал</Link></p>
-            <p className={`${classes.btn} ${classes.chat__news}`}><Link className={`${classes.link} ${classes.btn__groztex__news}`} href="https://chat.whatsapp.com/I0PLZZCBFaG2ytel0YtwMf">Группа в WhatsApp</Link></p>
-            <p className={`${classes.btn} ${classes.chat__bot}`}><Link className={`${classes.link} ${classes.btn__groztex__bot}`} href="https://t.me/GROZTEX_bot">@GROZTEX_bot</Link></p>
-            <p className={`${classes.btn} ${classes.chat__support}`}><Link className={`${classes.link} ${classes.btn__groztex__support}`} href="https://t.me/GROZTEX">@GROZTEX_Support</Link></p>
-            <p className={`${classes.btn} ${classes.chat__email}`}><Link className={`${classes.link} ${classes.btn__groztex__info}`} href="mailto:groztex@yandex.ru?subject=Запрос%20с%20сайта&body=Здравствуйте">groztex@yandex.ru</Link></p>
+            <p className={classes.btn}><Link className={classes.link} href="https://t.me/cryptoman_armenia">Новостной канал</Link></p>
+            <p className={classes.btn}><Link className={classes.link} href="https://t.me/Cryptoman_supports">@Cryptoman_supports</Link></p>
+            <p className={classes.btn}><a className={classes.link} href="tel:+37411755777">+374 11 755 777</a></p>
+            <p className={classes.btn}><a className={classes.link} href="tel:+37441755777">+374 41 755 777</a></p>
            </article>
       </section>
       <p className={classes.copyright}>© {new Date().getFullYear()} CRYPTOMAN. Все права защищены.</p>

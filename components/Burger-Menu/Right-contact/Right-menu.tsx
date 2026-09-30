@@ -6,16 +6,10 @@ import classes from "./sidebare.module.css";
 // Список соцсетей в боковом меню. Чтобы добавить новую — просто добавь объект.
 const links = [
   {
-    href: "https://t.me/groztex_news_groz",
+    href: "https://t.me/cryptoman_armenia",
     icon: "/telegram-icon/icon-tg-96.png",
     alt: "icon-telegram",
     label: "Telegram",
-  },
-  {
-    href: "https://chat.whatsapp.com/I0PLZZCBFaG2ytel0YtwMf",
-    icon: "/whatsApp-icon/icon-whatsapp-96.png",
-    alt: "icon-whatsapp",
-    label: "WhatsApp",
   },
 ];
 

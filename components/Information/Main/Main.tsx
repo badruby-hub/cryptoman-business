@@ -116,7 +116,7 @@ export default function Main() {
         <h2 className={classes.cta__title}>Готовы начать?</h2>
         <p className={classes.cta__text}>Обменяйте USDT быстро и без комиссии через нашего Telegram-бота.</p>
         <div className={classes.cta__btns}>
-          <Link className={`${classes.btn} ${classes.btn__primary}`} href="https://t.me/GROZTEX_bot">Обменять</Link>
+          <Link className={`${classes.btn} ${classes.btn__primary}`} href="https://t.me/Cryptoman_supports">Обменять</Link>
           <Link className={`${classes.btn} ${classes.btn__ghost}`} href="/contacts">Контакты</Link>
         </div>
       </section>

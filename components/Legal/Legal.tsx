@@ -81,8 +81,8 @@ export default function Legal({ doc, current }: { doc: LegalDocument; current: s
           <div className={classes.contact}>
             <p>
               Остались вопросы по документу? Напишите нам:{" "}
-              <a href="mailto:groztex@yandex.ru">groztex@yandex.ru</a> или{" "}
-              <a href="https://t.me/GROZTEX">@GROZTEX_Support</a>
+              <a href="https://t.me/Cryptoman_supports">@Cryptoman_supports</a> или позвоните:{" "}
+              <a href="tel:+37411755777">+374 11 755 777</a>
             </p>
           </div>
         </article>
