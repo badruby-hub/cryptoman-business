@@ -1,0 +1,237 @@
+/* ===== Плавающее боковое меню (Telegram / WhatsApp) ===== */
+.aside {
+    position: fixed;
+    right: clamp(12px, 2.5vw, 28px);
+    bottom: clamp(16px, 4vh, 40px);
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    color: white;
+}
+
+/* ----- Главная круглая кнопка ----- */
+.ul__btn__open {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.btn__open {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    background: linear-gradient(135deg, #12b8aa 0%, #00665c 100%);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 102, 92, 0.45);
+    transition:
+        transform 0.35s var(--ease),
+        box-shadow 0.35s var(--ease),
+        background 0.35s ease;
+}
+
+.btn__open:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 14px 36px rgba(18, 184, 170, 0.55);
+}
+
+.btn__open:active {
+    transform: scale(0.94);
+}
+
+/* Пульсирующее кольцо, пока меню закрыто */
+.pulse {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(18, 184, 170, 0.8);
+    animation: ring 2s var(--ease) infinite;
+    pointer-events: none;
+}
+
+.btn__open__active .pulse {
+    animation: none;
+    opacity: 0;
+}
+
+.icon__chat {
+    width: 28px;
+    height: 28px;
+    grid-area: 1 / 1;
+    transition:
+        transform 0.4s var(--ease),
+        opacity 0.25s ease;
+    animation: wiggle 4s ease-in-out infinite;
+}
+
+.btn__close {
+    position: relative;
+    grid-area: 1 / 1;
+    width: 26px;
+    height: 26px;
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+    transition:
+        transform 0.4s var(--ease),
+        opacity 0.25s ease;
+}
+
+.btn__close span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    margin-top: -1.5px;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.line__one {
+    transform: rotate(45deg);
+}
+
+.line__two {
+    transform: rotate(-45deg);
+}
+
+/* Состояние «открыто»: чат прячется, крестик появляется */
+.btn__open__active {
+    background: #0b2f2b;
+}
+
+.btn__open__active .icon__chat {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+    animation: none;
+}
+
+.btn__open__active .btn__close {
+    opacity: 1;
+    transform: none;
+}
+
+/* ----- Список соцсетей ----- */
+.ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    list-style-type: none;
+}
+
+.ul > li {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    transition:
+        opacity 0.3s ease,
+        transform 0.4s var(--ease);
+    /* элементы появляются по очереди снизу вверх */
+    transition-delay: calc((1 - var(--i, 0)) * 60ms);
+}
+
+.visible > li {
+    opacity: 1;
+    transform: none;
+}
+
+.hidden {
+    pointer-events: none;
+}
+
+.ul a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 76px;
+    padding: 10px 6px 8px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: rgba(12, 20, 19, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition:
+        transform 0.25s var(--ease),
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.ul a:hover {
+    transform: translateX(-4px);
+    border-color: var(--border-accent);
+    background: rgba(0, 102, 92, 0.55);
+}
+
+.ul p {
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.block__img {
+    width: 40px;
+    height: 40px;
+}
+
+.block__img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
+@keyframes wiggle {
+    0%, 86%, 100% {
+        transform: rotate(0);
+    }
+
+    90% {
+        transform: rotate(-12deg);
+    }
+
+    94% {
+        transform: rotate(10deg);
+    }
+}
+
+@media (max-width: 550px) {
+    .btn__open {
+        width: 52px;
+        height: 52px;
+    }
+
+    .icon__chat {
+        width: 24px;
+        height: 24px;
+    }
+
+    .ul a {
+        width: 66px;
+    }
+
+    .block__img {
+        width: 34px;
+        height: 34px;
+    }
+}

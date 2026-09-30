@@ -1,0 +1,35 @@
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.04em;
+    line-height: 1;
+    perspective: 600px;
+}
+
+.coin {
+    height: 0.95em;
+    width: auto;
+    flex-shrink: 0;
+    transform-style: preserve-3d;
+}
+
+/* Монетка вращается вокруг вертикальной оси, пока курсор на логотипе */
+.spin:hover .coin {
+    animation: coinFlip 1.2s linear infinite;
+}
+
+@keyframes coinFlip {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .spin:hover .coin {
+        animation: none;
+    }
+}

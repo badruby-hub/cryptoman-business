@@ -1,0 +1,308 @@
+/* ===== Кнопка-бургер ===== */
+.header__burger__btn {
+    display: none;
+    position: relative;
+    z-index: 101;
+    cursor: pointer;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.header__burger__btn:hover {
+    border-color: var(--border-accent);
+}
+
+.header__burger__btn span {
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    width: 22px;
+    height: 2px;
+    margin-top: -1px;
+    border-radius: 2px;
+    background-color: white;
+    transition:
+        transform 0.4s var(--ease),
+        opacity 0.25s ease,
+        width 0.3s var(--ease);
+}
+
+.header__burger__btn span:nth-child(1) {
+    transform: translateY(-7px);
+}
+
+.header__burger__btn span:nth-child(3) {
+    transform: translateY(7px);
+    width: 14px;
+}
+
+.header__burger__btn:hover span:nth-child(3) {
+    width: 22px;
+}
+
+/* Бургер превращается в крестик */
+.burger__active {
+    background: rgba(18, 184, 170, 0.15);
+    border-color: var(--border-accent);
+}
+
+.burger__active span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.burger__active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(10px);
+}
+
+.burger__active span:nth-child(3) {
+    width: 22px;
+    transform: rotate(-45deg);
+}
+
+/* ===== Затемнение фона ===== */
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 98;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.overlay__open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===== Выезжающая панель ===== */
+.container__list__menu {
+    color: white;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: min(380px, 88vw);
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: calc((var(--header-h) - 46px) / 2) 24px 32px;
+    background: linear-gradient(180deg, rgb(14, 16, 16) 0%, rgb(16, 40, 36) 60%, rgb(24, 110, 96) 100%);
+    border-left: 1px solid var(--border);
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.6);
+    transform: translateX(100%);
+    transition:
+        transform 0.5s var(--ease),
+        visibility 0.5s;
+    visibility: hidden;
+}
+
+.container__list__menu.open {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+.block__link {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Поочерёдное появление элементов панели */
+.block__link [style*="--i"] {
+    opacity: 0;
+    transform: translateX(30px);
+    transition:
+        opacity 0.4s ease,
+        transform 0.5s var(--ease);
+}
+
+.open .block__link [style*="--i"] {
+    opacity: 1;
+    transform: none;
+    transition-delay: calc(120ms + var(--i) * 45ms);
+}
+
+.block__logo {
+    display: flex;
+    align-items: center;
+    height: 46px;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+/* ----- Навигация ----- */
+.ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    border-top: 1px solid var(--border);
+}
+
+.nav__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 4px;
+    border-bottom: 1px solid var(--border);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--muted);
+    transition:
+        color 0.25s ease,
+        padding 0.3s var(--ease);
+}
+
+.arrow {
+    font-size: 20px;
+    color: var(--accent);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition:
+        opacity 0.25s ease,
+        transform 0.3s var(--ease);
+}
+
+.nav__link:hover,
+.nav__link__active {
+    color: white;
+    padding-left: 10px;
+}
+
+.nav__link:hover .arrow,
+.nav__link__active .arrow {
+    opacity: 1;
+    transform: none;
+}
+
+/* ----- Кнопки ----- */
+.block__btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: 600;
+    user-select: none;
+    transition:
+        transform 0.25s var(--ease),
+        filter 0.25s ease,
+        background 0.25s ease;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn__for__exchange {
+    background: linear-gradient(135deg, #12b8aa 0%, #1c7d75 100%);
+    animation: shadow 1.6s ease infinite;
+}
+
+.btn__for__exchange:hover {
+    filter: brightness(1.12);
+}
+
+.btn__for__news {
+    border: 1px solid var(--border-accent);
+    background: rgba(18, 184, 170, 0.08);
+}
+
+.btn__for__news:hover {
+    background: rgba(18, 184, 170, 0.2);
+}
+
+/* ----- Контакты ----- */
+.block__info__three {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contacts__title {
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 14px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.contact:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--border-accent);
+}
+
+.contact__note {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.contact__label {
+    font-size: 16px;
+    font-weight: 600;
+    word-break: break-word;
+}
+
+@keyframes shadow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(28, 125, 117, 0.8);
+    }
+
+    100% {
+        box-shadow: 0 0 0 15px rgba(28, 125, 117, 0);
+    }
+}
+
+@media(max-width: 850px) {
+    .header__burger__btn {
+        display: block;
+    }
+}
+
+@media(max-width: 360px) {
+    .block__btns {
+        grid-template-columns: 1fr;
+    }
+}

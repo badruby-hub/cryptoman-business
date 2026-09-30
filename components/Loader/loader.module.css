@@ -1,0 +1,30 @@
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Точки по очереди «мигают» */
+.line {
+    animation: blink 1.2s ease-in-out infinite;
+}
+
+.line_3 {
+    animation-delay: 0.2s;
+}
+
+.line_4 {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0.2;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+}

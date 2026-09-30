@@ -1,0 +1,171 @@
+.circle {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    -webkit-box-shadow: 0px 0px 140px 150px rgba(37, 134, 106, 0.4);
+    -moz-box-shadow: 0px 0px 140px 150px rgba(37, 134, 106, 0.4);
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/* Монета в центре светящегося круга */
+.coin {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: clamp(40px, 5vw, 64px);
+    aspect-ratio: 1;
+    translate: -50% -50%;
+    /* Приглушённые монеты: фон, а не акцент */
+    opacity: 0.35;
+    filter: blur(2px) saturate(0.7);
+    animation: coinSway 7s ease-in-out infinite;
+}
+
+.coin svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.circle__2 .coin {
+    animation-duration: 8s;
+    animation-delay: -2s;
+}
+
+.circle__3 .coin {
+    animation-duration: 9s;
+    animation-delay: -4s;
+}
+
+.circle__4 .coin {
+    animation-duration: 6.5s;
+    animation-delay: -1s;
+}
+
+/* Лёгкое покачивание монеты, будто она парит */
+@keyframes coinSway {
+    0%,
+    100% {
+        transform: rotate(-8deg) rotateY(0deg);
+    }
+
+    50% {
+        transform: rotate(8deg) rotateY(25deg);
+    }
+}
+
+.circle__1 {
+    animation-name: float1;
+    animation-duration: 14s;
+}
+
+@keyframes float1 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-40px, 50px);
+    }
+
+    50% {
+        transform: translate(-70px, 15px);
+    }
+
+    75% {
+        transform: translate(30px, 40px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.circle__2 {
+    animation-name: float2;
+    animation-duration: 16s;
+}
+
+@keyframes float2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(45px, -50px);
+    }
+
+    50% {
+        transform: translate(70px, 20px);
+    }
+
+    75% {
+        transform: translate(-40px, -35px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.circle__3 {
+    animation-name: float3;
+    animation-duration: 18s;
+}
+
+@keyframes float3 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-55px, 30px);
+    }
+
+    50% {
+        transform: translate(35px, -45px);
+    }
+
+    75% {
+        transform: translate(-25px, 55px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.circle__4 {
+    animation-name: float4;
+    animation-duration: 15s;
+}
+
+@keyframes float4 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(50px, -30px);
+    }
+
+    50% {
+        transform: translate(-40px, 40px);
+    }
+
+    75% {
+        transform: translate(30px, -55px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .circle,
+    .coin {
+        animation: none;
+    }
+}
