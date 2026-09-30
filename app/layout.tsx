@@ -17,7 +17,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "CRYPTOMAN-BUSINESS",
   description: "CRYPTOMAN BUSINESS",
-  icons: { icon: "/logo.png" },
+  icons: { icon: "/logo-coin.svg" },
 };
 
 export const viewport: Viewport = {
