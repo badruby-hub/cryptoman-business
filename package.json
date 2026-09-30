@@ -10,6 +10,7 @@
     "postinstall": "cp node_modules/maplibre-gl/dist/maplibre-gl-worker.mjs node_modules/maplibre-gl/dist/maplibre-gl-shared.mjs public/maplibre/"
   },
   "dependencies": {
+    "framer-motion": "^13.4.6",
     "maplibre-gl": "^6.11.2",
     "next": "^16.3.0",
     "react": "19.1.0",
